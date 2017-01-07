@@ -29,6 +29,7 @@ namespace Elektroshop
             set
             {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Bezeichnung darf nicht leer sein!");
+                bezeichnung = value;
             }
         }
 
@@ -41,6 +42,7 @@ namespace Elektroshop
             set
             {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Kennzeichnung darf nicht leer sein!");
+                kennzeichnung = value;
             }
         }
 
@@ -53,6 +55,7 @@ namespace Elektroshop
             set
             {
                 if (value <= 0) throw new ElektroshopException("Preis darf nicht 0 oder negativ sein!");
+                preis = value;
             }
         }
     }

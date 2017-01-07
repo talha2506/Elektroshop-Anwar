@@ -26,6 +26,7 @@ namespace Elektroshop
             set
             {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Marke darf nicht leer sein!");
+                marke = value;
             }
         }
 
@@ -38,6 +39,7 @@ namespace Elektroshop
             set
             {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Typ darf nicht leer sein!");
+                typ = value;
             }
         }
     }
