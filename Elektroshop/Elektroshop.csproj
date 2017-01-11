@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElektroshopException.cs" />
     <Compile Include="Geraete.cs" />
     <Compile Include="Kunden.cs" />
     <Compile Include="Lager.cs" />

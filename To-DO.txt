@@ -1,0 +1,10 @@
+6 - mitarbeiter add
+-) MitarbeiterNR, Gehalt, Position, Vorname, Nachname, Adresse
+
+7 - kunde add
+-) KundenNr, TreuePunkte, Mail, Newsletter, Vorname, Nachname, Adresse
+8 - buy product
+
+9 - vorlieben für marken
+
+10 - einkaufsliste kunden

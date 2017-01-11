@@ -5,79 +5,61 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elektroshop
-{
-    abstract class Produkte
-    {
+namespace Elektroshop {
+    abstract class Produkte {
         private string bezeichnung;
         private float preis;
         private string kennzeichnung;
 
-        public Produkte(string bezeichnung, float preis, string kennzeichnung)
-        {
+        public Produkte(string bezeichnung, float preis, string kennzeichnung) {
             Bezeichnung = bezeichnung;
             Preis = preis;
             Kennzeichnung = kennzeichnung;
         }
 
-        public string Bezeichnung
-        {
-            get
-            {
+        public string Bezeichnung {
+            get {
                 return bezeichnung;
             }
-            set
-            {
+            set {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Bezeichnung darf nicht leer sein!");
                 bezeichnung = value;
             }
         }
 
-        public string Kennzeichnung
-        {
-            get
-            {
+        public string Kennzeichnung {
+            get {
                 return kennzeichnung;
             }
-            set
-            {
+            set {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Kennzeichnung darf nicht leer sein!");
                 kennzeichnung = value;
             }
         }
 
-        public float Preis
-        {
-            get
-            {
+        public float Preis {
+            get {
                 return preis;
             }
-            set
-            {
+            set {
                 if (value <= 0) throw new ElektroshopException("Preis darf nicht 0 oder negativ sein!");
                 preis = value;
             }
         }
-    }
 
-
-    [Serializable]
-    internal class ElektroshopException : Exception
-    {
-        public ElektroshopException()
-        {
+        public override string ToString() {
+            return "Bezeichnung: " + Bezeichnung + "\nKennzeichnung: " + Kennzeichnung + "\nPreis: " + Preis;
         }
 
-        public ElektroshopException(string message) : base(message)
-        {
+        public override bool Equals(object obj) {
+            return Kennzeichnung == ((Produkte)obj).Kennzeichnung;
         }
-
-        public ElektroshopException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected ElektroshopException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
+        public override int GetHashCode() {
+            unchecked {
+                int hash = (int)2166136261;
+                hash *= 16777619 ^ Kennzeichnung.GetHashCode();
+                return hash;
+            }
         }
     }
 }

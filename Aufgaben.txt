@@ -1,0 +1,18 @@
+Produkte auflisten/hinzufügen
+Personen hinzufügen/auflisten
+Produkt verkaufen
+Vorlieben für Marken
+
+
+Kunden Einkaufsliste bisher
+
+<Geräte>
+	<G1>
+	Kennzeichnung ...
+	</G1>
+</Geräte>
+<Services>
+	<S1>
+	
+	</S1>
+</Services>
