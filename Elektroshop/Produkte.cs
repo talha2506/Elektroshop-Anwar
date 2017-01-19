@@ -6,25 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Elektroshop {
-    abstract class Produkte {
+    public abstract class Produkte {
         private string bezeichnung;
         private float preis;
-        private string kennzeichnung;
+        internal string kennzeichnung;
+        internal static int id = 1;
 
-        public Produkte(string bezeichnung, float preis, string kennzeichnung) {
+        public Produkte(string bezeichnung, float preis) {
             Bezeichnung = bezeichnung;
             Preis = preis;
-            Kennzeichnung = kennzeichnung;
-        }
-
-        public string Bezeichnung {
-            get {
-                return bezeichnung;
-            }
-            set {
-                if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Bezeichnung darf nicht leer sein!");
-                bezeichnung = value;
-            }
         }
 
         public string Kennzeichnung {
@@ -34,6 +24,16 @@ namespace Elektroshop {
             set {
                 if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Kennzeichnung darf nicht leer sein!");
                 kennzeichnung = value;
+            }
+        }
+
+        public string Bezeichnung {
+            get {
+                return bezeichnung;
+            }
+            set {
+                if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Bezeichnung darf nicht leer sein!");
+                bezeichnung = value;
             }
         }
 
@@ -52,12 +52,13 @@ namespace Elektroshop {
         }
 
         public override bool Equals(object obj) {
-            return Kennzeichnung == ((Produkte)obj).Kennzeichnung;
+            return Bezeichnung+""+Preis == ((Produkte)obj).Bezeichnung+""+Preis;
         }
         public override int GetHashCode() {
             unchecked {
                 int hash = (int)2166136261;
-                hash *= 16777619 ^ Kennzeichnung.GetHashCode();
+                hash *= 16777619 ^ Bezeichnung.GetHashCode();
+                hash *= 16777619 ^ Preis.GetHashCode();
                 return hash;
             }
         }

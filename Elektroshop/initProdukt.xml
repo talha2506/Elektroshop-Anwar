@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Produkte>
+  <Geraete>
+    <Kennzeichnung>G004</Kennzeichnung>
+    <Bezeichnung>iPhone4S</Bezeichnung>
+    <Preis>299</Preis>
+    <Marke>Apple</Marke>
+    <Typ>Handy</Typ>
+  </Geraete>
+  <Geraete>
+    <Kennzeichnung>G004</Kennzeichnung>
+    <Bezeichnung>iPhone4S</Bezeichnung>
+    <Preis>299</Preis>
+    <Marke>Apple</Marke>
+    <Typ>Handy</Typ>
+  </Geraete>
+  <Geraete>
+    <Kennzeichnung>G004</Kennzeichnung>
+    <Bezeichnung>iPhone4S</Bezeichnung>
+    <Preis>299</Preis>
+    <Marke>Apple</Marke>
+    <Typ>Handy</Typ>
+  </Geraete>
+  <Geraete>
+    <Kennzeichnung>G004</Kennzeichnung>
+    <Bezeichnung>iPhone4S</Bezeichnung>
+    <Preis>299</Preis>
+    <Marke>Apple</Marke>
+    <Typ>Handy</Typ>
+  </Geraete>
+</Produkte>

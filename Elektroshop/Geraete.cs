@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Elektroshop {
-    class Geraete : Produkte {
+    public class Geraete : Produkte {
         private string marke;
         private string typ;
 
-        public Geraete(string marke, string typ, string bezeichnung, float preis, string kennzeichnung) : base(bezeichnung, preis, kennzeichnung) {
+        public Geraete(string marke, string typ, string bezeichnung, float preis) : base(bezeichnung, preis) {
             Marke = marke;
             Typ = typ;
         }

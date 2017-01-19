@@ -5,25 +5,49 @@ using System.Text;
 using System.Threading.Tasks;
 using Elektroshop;
 
+using BabaElmo;
+
 namespace Elektroshop {
     class Program {
         static void Main(string[] args) {
             /*
              * Lager init
-             */
+            */
             Lager l = new Lager();
-            Produkte g1 = new Geraete("Apple", "Handy", "iPhone6S", 699F, "G001");
-            Produkte g2 = new Geraete("Apple", "Handy", "iPhone6S", 699F, "G001");
-            Produkte s1 = new Services("Reparatur", "iPhone6s Displayschaden", 99F, "S001");
-            Produkte z1 = new Zubehoer("Kopfhörer", "Apple Airpods", 199F, "Z001");
+            Produkte g1 = new Geraete("Apple", "Handy", "iPhone6S", 699F);
+            Produkte g2 = new Geraete("Apple", "Handy", "iPhone6S", 699F);
+            Produkte g3 = new Geraete("Apple", "Handy", "iPhone5S", 599F);
+            Produkte g4 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g5 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g6 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g7 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g8 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g9 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g10 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
+            Produkte g11 = new Geraete("Apple", "Handy", "iPhone4S", 299F);
+
+
+            Produkte s1 = new Services("Reparatur", "iPhone6s Displayschaden", 99F);
+            Produkte z1 = new Zubehoer("Kopfhörer", "Apple Airpods", 199F);
+
             l.Add(g1);
             l.Add(g2);
+            l.Add(g3);
+            l.Add(g4);
+            l.Add(g5);
+            l.Add(g6);
+            l.Add(g7);
+            l.Add(g8);
+            l.Add(g9);
+            l.Add(g10);
+            l.Add(g11);
             l.Add(s1);
             l.Add(z1);
 
+
             /*
              * Verwaltung init
-             */
+            */
             Verwaltung v = new Verwaltung();
             Person p1 = new Kunden(1, 100, "amana@koi.at", true, "Baba", "Elmo", "Sahulka");
             Person p2 = new Kunden(6, 3, "amana@bigmac.at", false, "Iskender", "Şiş", "Istanbul");
@@ -31,6 +55,8 @@ namespace Elektroshop {
             v.Add(p1);
             v.Add(p2);
             v.Add(p3);
+
+            //Console.WriteLine(v.Serialize().ToString());
             
 
             while (true) {
@@ -67,11 +93,8 @@ namespace Elektroshop {
                         Console.Write("Preis: ");
                         string preis = Console.ReadLine();
 
-                        Console.Write("Kennzeichnung: ");
-                        string kennzeichnung = Console.ReadLine();
-
                         try {
-                            Produkte g = new Geraete(marke, typ, bezeichnung, float.Parse(preis), kennzeichnung);
+                            Produkte g = new Geraete(marke, typ, bezeichnung, float.Parse(preis));
                             l.Add(g);
                             Console.WriteLine("Gerät hinzugefügt");
                         } catch { Console.WriteLine("Konnte nicht hinzugefügt werden, Prüfen Sie Ihre Eingaben!"); }
@@ -87,11 +110,8 @@ namespace Elektroshop {
                         Console.Write("Preis: ");
                         preis = Console.ReadLine();
 
-                        Console.Write("Kennzeichnung: ");
-                        kennzeichnung = Console.ReadLine();
-
                         try {
-                            Produkte s = new Services(art, bezeichnung, float.Parse(preis), kennzeichnung);
+                            Produkte s = new Services(art, bezeichnung, float.Parse(preis));
                             l.Add(s);
                             Console.WriteLine("Service hinzugefügt");
                         } catch { Console.WriteLine("Konnte nicht hinzugefügt werden, Prüfen Sie Ihre Eingaben!"); }
@@ -108,11 +128,8 @@ namespace Elektroshop {
                         Console.Write("Preis: ");
                         preis = Console.ReadLine();
 
-                        Console.Write("Kennzeichnung: ");
-                        kennzeichnung = Console.ReadLine();
-
                         try {
-                            Produkte z = new Zubehoer(verwendung, bezeichnung, float.Parse(preis), kennzeichnung);
+                            Produkte z = new Zubehoer(verwendung, bezeichnung, float.Parse(preis));
                             l.Add(z);
                             Console.WriteLine("Zubehör hinzugefügt");
                         } catch { Console.WriteLine("Konnte nicht hinzugefügt werden, Prüfen Sie Ihre Eingaben!"); }
@@ -201,7 +218,6 @@ namespace Elektroshop {
                 Console.Clear();
             }
         }
-
         public static void ColouredWriteLine(string message, ConsoleColor background, ConsoleColor foreground) {
             Console.BackgroundColor = background;
             Console.ForegroundColor = foreground;

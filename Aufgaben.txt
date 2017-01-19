@@ -5,7 +5,7 @@ Vorlieben für Marken
 
 
 Kunden Einkaufsliste bisher
-
+<Produkte>
 <Geräte>
 	<G1>
 	Kennzeichnung ...
@@ -16,3 +16,4 @@ Kunden Einkaufsliste bisher
 	
 	</S1>
 </Services>
+</Produkte>

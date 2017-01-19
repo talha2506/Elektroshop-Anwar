@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Elektroshop {
-    class Verwaltung {
-        private List<Person> personen;
+    public class Verwaltung {
+        public List<Person> personen;
         public Verwaltung() {
             personen = new List<Person>();
         }

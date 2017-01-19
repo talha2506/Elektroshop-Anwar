@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Elektroshop {
-    class Services : Produkte {
+    public class Services : Produkte {
         private string art;
+        
 
-        public Services(string art, string bezeichnung, float preis, string kennzeichnung) : base(bezeichnung, preis, kennzeichnung) {
+        public Services(string art, string bezeichnung, float preis) : base(bezeichnung, preis) {
             Art = art;
         }
 

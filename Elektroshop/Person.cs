@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Elektroshop {
-    abstract class Person {
+    public abstract class Person {
         private string vorname;
         private string nachname;
         private string adresse;
