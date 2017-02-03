@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Elektroshop;
 
 using BabaElmo;
+using System.Xml.Linq;
 
 namespace Elektroshop {
     class Program {
@@ -25,6 +26,15 @@ namespace Elektroshop {
             Produkte g9 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
             Produkte g10 = new Geraete("Apple", "Handy", "iPhone4S", 399F);
             Produkte g11 = new Geraete("Apple", "Handy", "iPhone4S", 299F);
+            Produkte g12 = new Geraete("Samsung", "Tablet", "Galaxy Tab3 ", 200F);
+            Produkte g13 = new Geraete("Huawei", "Handy", "P9", 450F);
+            Produkte g14 = new Geraete("Huawei", "Handy", "P8 ", 350F);
+            Produkte g15 = new Geraete("Samsung", "Handy", "Galaxy S5", 450F);
+            Produkte g16 = new Geraete("Samsung", "Handy", "Galaxy S4", 350F);
+            Produkte g17 = new Geraete("Samsung", "Handy", "Galaxy S3", 200F);
+
+
+
 
 
             Produkte s1 = new Services("Reparatur", "iPhone6s Displayschaden", 99F);
@@ -41,6 +51,12 @@ namespace Elektroshop {
             l.Add(g9);
             l.Add(g10);
             l.Add(g11);
+            l.Add(g12);
+            l.Add(g13);
+            l.Add(g14);
+            l.Add(g15);
+            l.Add(g16);
+            l.Add(g17);
             l.Add(s1);
             l.Add(z1);
 
@@ -49,15 +65,19 @@ namespace Elektroshop {
              * Verwaltung init
             */
             Verwaltung v = new Verwaltung();
-            Person p1 = new Kunden(1, 100, "amana@koi.at", true, "Baba", "Elmo", "Sahulka");
-            Person p2 = new Kunden(6, 3, "amana@bigmac.at", false, "Iskender", "Şiş", "Istanbul");
-            Person p3 = new Mitarbeiter(11, 3999D, "Geschäftsführer", "Talha", "Anwar", "Korea");
-            v.Add(p1);
-            v.Add(p2);
-            v.Add(p3);
+            Person p1 = new Kunden(100, "amana@koi.at", true, "Baba", "Elmo", "Sahulka");
+            Person p2 = new Kunden(100, "amana@koi.at", true, "Baba", "Elmo", "Sahulka");
+            Person p3 = new Kunden(3, "amana@bigmac.at", false, "Iskender", "Şiş", "Istanbul");
+            Person p4 = new Mitarbeiter(3999D, "Geschäftsführer", "Talha", "Anwar", "Korea");
+            Person p5 = new Mitarbeiter(3999D, "Geschäftsführer", "Talha", "Anwar", "Korea");
+            v.AddPerson(p1);
+            v.AddPerson(p2);
+            v.AddPerson(p3);
+            v.AddPerson(p4);
+            v.AddPerson(p5);
 
             //Console.WriteLine(v.Serialize().ToString());
-            
+
 
             while (true) {
                 Console.WriteLine("Willkommen zur Elektroshop-Verwaltung");
@@ -69,9 +89,13 @@ namespace Elektroshop {
                 Console.WriteLine("6 - Mitarbeiter hinzufügen");
                 Console.WriteLine("7 - Kunde hinzufügen");
                 Console.WriteLine("8 - Produkt verkaufen an Kunden");
-                Console.WriteLine("9 - Vorlieben für Marken");
-                Console.WriteLine("10 - Bisherige Einkäufe eines Kunden");
-                Console.WriteLine("11 - Programm schließen");
+                Console.WriteLine("9 - Lager speichern");
+                Console.WriteLine("10 - Personen speichern");
+                Console.WriteLine("11 - Vorlieben für Marken");
+                Console.WriteLine("12 - Bisherige Einkäufe");
+                Console.WriteLine("13 - Daten von einzelnen Kunden bekommen");
+                Console.WriteLine("14 - Daten von einzelnen Mitarbeitern bekommen");
+                Console.WriteLine("15 - Programm schließen");
                 Console.WriteLine("-----------------------------------");
 
                 switch (Console.ReadLine()) {
@@ -98,7 +122,7 @@ namespace Elektroshop {
                             l.Add(g);
                             Console.WriteLine("Gerät hinzugefügt");
                         } catch { Console.WriteLine("Konnte nicht hinzugefügt werden, Prüfen Sie Ihre Eingaben!"); }
-                break;
+                        break;
 
                     case "3":
                         Console.Write("Art: ");
@@ -140,8 +164,6 @@ namespace Elektroshop {
                         break;
 
                     case "6":
-                        Console.Write("MitarbeiterNr: ");
-                        string mitarbeiterNr = Console.ReadLine();
 
                         Console.Write("Gehalt: ");
                         string gehalt = Console.ReadLine();
@@ -158,15 +180,13 @@ namespace Elektroshop {
                         Console.Write("Adresse: ");
                         string adresse = Console.ReadLine();
                         try {
-                            Person p = new Mitarbeiter(int.Parse(mitarbeiterNr), double.Parse(gehalt), position, vorname, nachname, adresse );
-                            v.Add(p);
+                            Person p = new Mitarbeiter(double.Parse(gehalt), position, vorname, nachname, adresse);
+                            v.AddPerson(p);
                             Console.WriteLine("Mitarbeiter wurde erfolgreich hinzugefügt");
                         } catch { Console.WriteLine("Konnte nicht hinzugefügt werden, Prüfen Sie Ihre Eingaben!"); }
-                         break;
+                        break;
 
                     case "7":
-                        Console.Write("KundenNr: ");
-                        string kundenNr = Console.ReadLine();
 
                         Console.Write("Treuepunkte: ");
                         string treuepunkte = Console.ReadLine();
@@ -175,7 +195,7 @@ namespace Elektroshop {
                         string mail = Console.ReadLine();
 
                         Console.Write("Newsletter: (true oder false)");
-                        string newsletter  = Console.ReadLine();
+                        string newsletter = Console.ReadLine();
 
                         Console.Write("Vorname: ");
                         vorname = Console.ReadLine();
@@ -186,25 +206,129 @@ namespace Elektroshop {
                         Console.Write("Adresse: ");
                         adresse = Console.ReadLine();
                         try {
-                            Person p = new Kunden(int.Parse(kundenNr), int.Parse(treuepunkte), mail, bool.Parse(newsletter), vorname, nachname, adresse);
-                            v.Add(p);
+                            Person p = new Kunden(int.Parse(treuepunkte), mail, bool.Parse(newsletter), vorname, nachname, adresse);
+                            v.AddPerson(p);
                             Console.WriteLine("Mitarbeiter wurde erfolgreich hinzugefügt");
                         } catch { Console.WriteLine("Konnte nicht hinzugefügt werden, Prüfen Sie Ihre Eingaben!"); }
                         break;
 
                     case "8":
-                        Console.WriteLine("Buy Product");
+                        Console.WriteLine("Produkt kaufen");
+                        l.PrintKennzeichen();
+                        Console.Write("Produkt: ");
+                        string input = Console.ReadLine().ToUpper();
+                        Console.WriteLine();
+
+                        v.PrintK_ID();
+
+                        Console.Write("Kunde: ");
+                        int kundennr = Convert.ToInt32(Console.ReadLine());
+
+
+                        ((Kunden)v.GetFromKundenNr(kundennr)).Add(l.RemoveFromKennzeichen(input));
                         break;
 
                     case "9":
-                        Console.WriteLine("Vorlieben für Marken");
+                        l.FillXml();
+                        Console.WriteLine("Lager wurde gespeichert");
                         break;
 
                     case "10":
-                        Console.WriteLine("Bisherige Einkäufe");
+                        v.FillXml();
+                        Console.WriteLine("Personen wurde gespeichert");
                         break;
 
                     case "11":
+                        Console.WriteLine("Kunde auswählen:");
+                        v.PrintK_ID();
+                        Console.WriteLine("----------------------");
+                        SortedDictionary<string, int> einkaufslist = new SortedDictionary<string, int>();
+                        string k = Console.ReadLine();
+                        var file = XElement.Load("../../personen.xml");
+                        var erg = from kundenEinkauf in file.Descendants("Kennzeichnung")
+                                  where kundenEinkauf.Attribute("K_ID").Value == k
+                                  select kundenEinkauf.Element("Einkaufslisten").Element("Einkaufsliste");
+                        foreach (var item in erg) {
+                            item.Descendants("Geraete").ToList().ForEach(x => {
+                                if (einkaufslist.ContainsKey(x.Element("Marke").Value)) {
+                                    int anzahl = einkaufslist[x.Element("Marke").Value];
+                                    einkaufslist.Remove(x.Element("Marke").Value);
+                                    einkaufslist.Add(x.Element("Marke").Value, (anzahl + 1));
+                                } else {
+                                    einkaufslist.Add(x.Element("Marke").Value, 1);
+                                }
+                            });
+                            foreach(var xn in einkaufslist) {
+                                Console.WriteLine(xn.Key + ", " + xn.Value);
+                            }
+                            Console.WriteLine("--------------------------------------");
+
+                            Console.WriteLine("Lieblingsmarke vom Kunden "+ k + ":");
+                            var x1 = einkaufslist.Keys.ToList().OrderBy(x => x);
+                            Console.WriteLine(x1.First());
+                        }
+                        break;
+
+                    case "12":
+                        Console.WriteLine("Bisherige Einkäufe");
+                        v.PrintK_ID();
+                        Console.Write("Kunde: ");
+                        int kundenID = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine();
+                        v.PrintEinkaufe(kundenID);
+                        break;
+
+                    case "13":
+                        v.PrintK_ID();
+                        Console.WriteLine("Kunden-Nr eingeben");
+                        string kunde = Console.ReadLine();
+                        var xml = XElement.Load("../../personen.xml");
+                        var erg1 = from x1 in xml.Descendants("Kennzeichnung")
+                                   where x1.Attribute("K_ID").Value == kunde
+                                   select new {
+                                       Vorname = x1.Element("Vorname").Value,
+                                       Nachname = x1.Element("Nachname").Value,
+                                       Adresse = x1.Element("Adresse").Value,
+                                       Mail = x1.Element("Mail").Value,
+                                       Treuepunkte = x1.Element("Treuepunkte").Value
+                                   };
+                        Console.Clear();
+                        foreach (var item in erg1) {
+                            Console.WriteLine("Kunde: " + kunde);
+                            Console.WriteLine(item.Vorname);
+                            Console.WriteLine(item.Nachname);
+                            Console.WriteLine(item.Adresse);
+                            Console.WriteLine(item.Mail);
+                            Console.WriteLine(item.Treuepunkte);
+                        }
+                        break;
+
+                    case "14":
+                        v.PrintM_ID();
+                        Console.WriteLine("Mitarbeiter-Nr eingeben");
+                        string mitarbeiter = Console.ReadLine();
+                        var xml1 = XElement.Load("../../personen.xml");
+                        var erg2 = from x1 in xml1.Descendants("Arbeiter")
+                                   where x1.Attribute("M_ID").Value == mitarbeiter
+                                   select new {
+                                       Vorname = x1.Element("Vorname").Value,
+                                       Nachname = x1.Element("Nachname").Value,
+                                       Adresse = x1.Element("Adresse").Value,
+                                       Position = x1.Element("Position").Value,
+                                       Gehalt = x1.Element("Gehalt").Value
+                                   };
+                        Console.Clear();
+                        foreach (var item in erg2) {
+                            Console.WriteLine("Mitarbeiter: " + mitarbeiter);
+                            Console.WriteLine(item.Vorname);
+                            Console.WriteLine(item.Nachname);
+                            Console.WriteLine(item.Adresse);
+                            Console.WriteLine(item.Position);
+                            Console.WriteLine(item.Gehalt);
+                        }
+                        break;
+
+                    case "15":
                         Environment.Exit(0);
                         break;
 

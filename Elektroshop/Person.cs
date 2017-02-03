@@ -9,6 +9,8 @@ namespace Elektroshop {
         private string vorname;
         private string nachname;
         private string adresse;
+        public static int kundenID = 0;
+        public static int mitarbeiterID = 0;
 
         public Person(string vorname, string nachname, string adresse) {
             Vorname = vorname;

@@ -19,7 +19,7 @@ namespace Elektroshop {
                 return marke;
             }
             set {
-                if (String.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Marke darf nicht leer sein!");
+                if (string.IsNullOrWhiteSpace(value)) throw new ElektroshopException("Marke darf nicht leer sein!");
                 marke = value;
             }
         }
@@ -35,7 +35,7 @@ namespace Elektroshop {
         }
 
         public override string ToString() {
-            return base.ToString() + "\nMarke: " + Marke + "\nTyp: " + Typ;
+            return base.ToString() + "\nMarke: " + Marke + "\nTyp: " + Typ + "\n";
         }
     }
 }

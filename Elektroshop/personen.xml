@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Kunde>
+    <Kennzeichnung K_ID="1">
+      <Vorname>Baba</Vorname>
+      <Nachname>Elmo</Nachname>
+      <Adresse>Sahulka</Adresse>
+      <Mail>amana@koi.at</Mail>
+      <Treuepunkte>100</Treuepunkte>
+      <Newsletter>Ja</Newsletter>
+      <Einkaufslisten>
+        <Einkaufsliste>
+          <Geraete ID="G008">
+            <Bezeichnung>Galaxy S5</Bezeichnung>
+            <Preis>450</Preis>
+            <Marke>Samsung</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G009">
+            <Bezeichnung>Galaxy S4</Bezeichnung>
+            <Preis>350</Preis>
+            <Marke>Samsung</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G010">
+            <Bezeichnung>Galaxy S3</Bezeichnung>
+            <Preis>200</Preis>
+            <Marke>Samsung</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G001">
+            <Bezeichnung>iPhone6S</Bezeichnung>
+            <Preis>699</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G001">
+            <Bezeichnung>iPhone6S</Bezeichnung>
+            <Preis>699</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G002">
+            <Bezeichnung>iPhone5S</Bezeichnung>
+            <Preis>599</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G003">
+            <Bezeichnung>iPhone4S</Bezeichnung>
+            <Preis>399</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+        </Einkaufsliste>
+      </Einkaufslisten>
+    </Kennzeichnung>
+    <Kennzeichnung K_ID="2">
+      <Vorname>Baba</Vorname>
+      <Nachname>Elmo</Nachname>
+      <Adresse>Sahulka</Adresse>
+      <Mail>amana@koi.at</Mail>
+      <Treuepunkte>100</Treuepunkte>
+      <Newsletter>Ja</Newsletter>
+      <Einkaufslisten>
+        <Einkaufsliste />
+      </Einkaufslisten>
+    </Kennzeichnung>
+    <Kennzeichnung K_ID="3">
+      <Vorname>Iskender</Vorname>
+      <Nachname>Şiş</Nachname>
+      <Adresse>Istanbul</Adresse>
+      <Mail>amana@bigmac.at</Mail>
+      <Treuepunkte>3</Treuepunkte>
+      <Newsletter>Nein</Newsletter>
+      <Einkaufslisten>
+        <Einkaufsliste />
+      </Einkaufslisten>
+    </Kennzeichnung>
+  </Kunde>
+  <Kunde />
+  <Kunde />
+  <Mitarbeiter>
+    <Arbeiter M_ID="1">
+      <Vorname>Talha</Vorname>
+      <Nachname>Anwar</Nachname>
+      <Adresse>Korea</Adresse>
+      <Position>Geschäftsführer</Position>
+      <Gehalt>3999</Gehalt>
+    </Arbeiter>
+    <Arbeiter M_ID="2">
+      <Vorname>Talha</Vorname>
+      <Nachname>Anwar</Nachname>
+      <Adresse>Korea</Adresse>
+      <Position>Geschäftsführer</Position>
+      <Gehalt>3999</Gehalt>
+    </Arbeiter>
+  </Mitarbeiter>
+</root>

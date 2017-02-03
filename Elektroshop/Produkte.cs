@@ -54,6 +54,7 @@ namespace Elektroshop {
         public override bool Equals(object obj) {
             return Bezeichnung+""+Preis == ((Produkte)obj).Bezeichnung+""+Preis;
         }
+
         public override int GetHashCode() {
             unchecked {
                 int hash = (int)2166136261;

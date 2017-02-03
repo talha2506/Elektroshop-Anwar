@@ -23,7 +23,7 @@ namespace Elektroshop {
             }
         }
         public override string ToString() {
-            return base.ToString() + "\nArt: " + Art;
+            return base.ToString() + "\nArt: " + Art + "\n";
         }
     }
 }

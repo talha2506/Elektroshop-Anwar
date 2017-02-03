@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Elektroshop {
-    class Mitarbeiter : Person {
+    public class Mitarbeiter : Person {
         private int mitarbeiterNr;
         private double gehalt;
         private string position;
 
-        public Mitarbeiter(int mitarbeiterNr, double gehalt, string position, string vorname, string nachname, string adresse) : base(vorname, nachname, adresse) {
-            MitarbeiterNr = mitarbeiterNr;
+        public Mitarbeiter(double gehalt, string position, string vorname, string nachname, string adresse) : base(vorname, nachname, adresse) {
+            MitarbeiterNr = ++Person.mitarbeiterID;
             Gehalt = gehalt;
             Position = position;
         }
@@ -46,7 +46,20 @@ namespace Elektroshop {
         }
 
         public override string ToString() {
-            return base.ToString() + "\nMitarbeiter-Nummer: " + MitarbeiterNr + "\nGehalt: " + Gehalt + "\nPosition: " + Position;
+            return base.ToString() + "\nMitarbeiter-Nummer: " + MitarbeiterNr + "\nGehalt: " + Gehalt + "\nPosition: " + Position + "\n";
+        }
+
+        public override bool Equals(object m1) {
+            if (!(m1 is Mitarbeiter)) return false;
+            return this.MitarbeiterNr.Equals(((Mitarbeiter)m1).MitarbeiterNr);
+        }
+
+        public override int GetHashCode() {
+            unchecked {
+                int hash = (int)2166136261;
+                hash *= 16777619 ^ MitarbeiterNr.GetHashCode();
+                return hash;
+            }
         }
     }
 }

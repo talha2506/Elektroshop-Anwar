@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Elektroshop {
     [Serializable]
-    internal class ElektroshopException : Exception {
+    public class ElektroshopException : Exception {
         public ElektroshopException() {
         }
 

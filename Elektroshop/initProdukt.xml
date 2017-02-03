@@ -1,31 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Produkte>
-  <Geraete>
-    <Kennzeichnung>G004</Kennzeichnung>
-    <Bezeichnung>iPhone4S</Bezeichnung>
-    <Preis>299</Preis>
-    <Marke>Apple</Marke>
-    <Typ>Handy</Typ>
-  </Geraete>
-  <Geraete>
-    <Kennzeichnung>G004</Kennzeichnung>
-    <Bezeichnung>iPhone4S</Bezeichnung>
-    <Preis>299</Preis>
-    <Marke>Apple</Marke>
-    <Typ>Handy</Typ>
-  </Geraete>
-  <Geraete>
-    <Kennzeichnung>G004</Kennzeichnung>
-    <Bezeichnung>iPhone4S</Bezeichnung>
-    <Preis>299</Preis>
-    <Marke>Apple</Marke>
-    <Typ>Handy</Typ>
-  </Geraete>
-  <Geraete>
-    <Kennzeichnung>G004</Kennzeichnung>
-    <Bezeichnung>iPhone4S</Bezeichnung>
-    <Preis>299</Preis>
-    <Marke>Apple</Marke>
-    <Typ>Handy</Typ>
-  </Geraete>
-</Produkte>
+<root>
+  <Geraet>
+    <Kennzeichnung ID="G001">
+      <Anzahl>1</Anzahl>
+      <Marke>Apple</Marke>
+      <Bezeichnung>iPhone6S</Bezeichnung>
+      <Typ>Handy</Typ>
+      <Preis>699</Preis>
+    </Kennzeichnung>
+    <Kennzeichnung ID="G003">
+      <Anzahl>7</Anzahl>
+      <Marke>Apple</Marke>
+      <Bezeichnung>iPhone4S</Bezeichnung>
+      <Typ>Handy</Typ>
+      <Preis>399</Preis>
+    </Kennzeichnung>
+    <Kennzeichnung ID="G004">
+      <Anzahl>1</Anzahl>
+      <Marke>Apple</Marke>
+      <Bezeichnung>iPhone4S</Bezeichnung>
+      <Typ>Handy</Typ>
+      <Preis>299</Preis>
+    </Kennzeichnung>
+  </Geraet>
+  <Service>
+    <Kennzeichnung ID="S005">
+      <Anzahl>1</Anzahl>
+      <Bezeichnung>iPhone6s Displayschaden</Bezeichnung>
+      <Art>Reparatur</Art>
+      <Preis>99</Preis>
+    </Kennzeichnung>
+  </Service>
+  <Zubehoer>
+    <Kennzeichnung ID="Z006">
+      <Anzahl>1</Anzahl>
+      <Bezeichnung>Apple Airpods</Bezeichnung>
+      <Verwendung>Kopfhörer</Verwendung>
+      <Preis>199</Preis>
+    </Kennzeichnung>
+  </Zubehoer>
+</root>
