@@ -131,12 +131,27 @@ namespace Elektroshop {
 
         public Produkte RemoveFromKennzeichen(string kennzeichen) {
             Produkte p = lager.Keys.ToList().Find(x => x.Kennzeichnung == kennzeichen);
-            int anzahl = lager[p]-1;
+            int anzahl = lager[p] - 1;
             lager.Remove(p);
             if (anzahl > 0) {
                 lager.Add(p, anzahl);
             }
+
+
+
             return p;
+        }
+
+        public void ChangeTreuepunkte(string kennzeichen, string k_id) {
+            Produkte p = lager.Keys.ToList().Find(x => x.Kennzeichnung == kennzeichen);
+            int extra = System.Convert.ToInt32(p.Preis);
+
+            var file = XElement.Load("../../personen.xml");
+            (from person in file.Descendants("Kennzeichnung")
+             where person.Attribute("K_ID").Value.Equals(k_id)
+             select person).ToList().ForEach(x => x.Element("Treuepunkte").SetValue(int.Parse(x.Element("Treuepunkte").Value)+extra));
+            
+            file.Save("../../personen.xml");
         }
     }
 }

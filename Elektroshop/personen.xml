@@ -10,30 +10,6 @@
       <Newsletter>Ja</Newsletter>
       <Einkaufslisten>
         <Einkaufsliste>
-          <Geraete ID="G008">
-            <Bezeichnung>Galaxy S5</Bezeichnung>
-            <Preis>450</Preis>
-            <Marke>Samsung</Marke>
-            <Typ>Handy</Typ>
-          </Geraete>
-          <Geraete ID="G009">
-            <Bezeichnung>Galaxy S4</Bezeichnung>
-            <Preis>350</Preis>
-            <Marke>Samsung</Marke>
-            <Typ>Handy</Typ>
-          </Geraete>
-          <Geraete ID="G010">
-            <Bezeichnung>Galaxy S3</Bezeichnung>
-            <Preis>200</Preis>
-            <Marke>Samsung</Marke>
-            <Typ>Handy</Typ>
-          </Geraete>
-          <Geraete ID="G001">
-            <Bezeichnung>iPhone6S</Bezeichnung>
-            <Preis>699</Preis>
-            <Marke>Apple</Marke>
-            <Typ>Handy</Typ>
-          </Geraete>
           <Geraete ID="G001">
             <Bezeichnung>iPhone6S</Bezeichnung>
             <Preis>699</Preis>
@@ -46,10 +22,28 @@
             <Marke>Apple</Marke>
             <Typ>Handy</Typ>
           </Geraete>
+          <Geraete ID="G001">
+            <Bezeichnung>iPhone6S</Bezeichnung>
+            <Preis>699</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
           <Geraete ID="G003">
             <Bezeichnung>iPhone4S</Bezeichnung>
             <Preis>399</Preis>
             <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G005">
+            <Bezeichnung>Galaxy Tab3 </Bezeichnung>
+            <Preis>200</Preis>
+            <Marke>Samsung</Marke>
+            <Typ>Tablet</Typ>
+          </Geraete>
+          <Geraete ID="G007">
+            <Bezeichnung>P8 </Bezeichnung>
+            <Preis>350</Preis>
+            <Marke>Huawei</Marke>
             <Typ>Handy</Typ>
           </Geraete>
         </Einkaufsliste>
@@ -63,7 +57,20 @@
       <Treuepunkte>100</Treuepunkte>
       <Newsletter>Ja</Newsletter>
       <Einkaufslisten>
-        <Einkaufsliste />
+        <Einkaufsliste>
+          <Geraete ID="G003">
+            <Bezeichnung>iPhone4S</Bezeichnung>
+            <Preis>399</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+          <Geraete ID="G003">
+            <Bezeichnung>iPhone4S</Bezeichnung>
+            <Preis>399</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+        </Einkaufsliste>
       </Einkaufslisten>
     </Kennzeichnung>
     <Kennzeichnung K_ID="3">
@@ -74,7 +81,14 @@
       <Treuepunkte>3</Treuepunkte>
       <Newsletter>Nein</Newsletter>
       <Einkaufslisten>
-        <Einkaufsliste />
+        <Einkaufsliste>
+          <Geraete ID="G003">
+            <Bezeichnung>iPhone4S</Bezeichnung>
+            <Preis>399</Preis>
+            <Marke>Apple</Marke>
+            <Typ>Handy</Typ>
+          </Geraete>
+        </Einkaufsliste>
       </Einkaufslisten>
     </Kennzeichnung>
   </Kunde>

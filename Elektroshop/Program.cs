@@ -76,9 +76,6 @@ namespace Elektroshop {
             v.AddPerson(p4);
             v.AddPerson(p5);
 
-            //Console.WriteLine(v.Serialize().ToString());
-
-
             while (true) {
                 Console.WriteLine("Willkommen zur Elektroshop-Verwaltung");
                 Console.WriteLine("1 - Produkte auflisten");
@@ -216,14 +213,14 @@ namespace Elektroshop {
                         Console.WriteLine("Produkt kaufen");
                         l.PrintKennzeichen();
                         Console.Write("Produkt: ");
-                        string input = Console.ReadLine().ToUpper();
+                        string input = Console.ReadLine();
                         Console.WriteLine();
 
                         v.PrintK_ID();
 
                         Console.Write("Kunde: ");
                         int kundennr = Convert.ToInt32(Console.ReadLine());
-
+                        l.ChangeTreuepunkte(input, kundennr.ToString());
 
                         ((Kunden)v.GetFromKundenNr(kundennr)).Add(l.RemoveFromKennzeichen(input));
                         break;
